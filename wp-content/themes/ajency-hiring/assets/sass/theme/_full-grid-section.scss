@@ -1,0 +1,31 @@
+.section-full-grid{
+    padding-top: 64px;
+    padding-bottom: 192.25px;
+
+    @media (max-width: 768px){
+        padding-top: 40px;
+        padding-bottom: 145px;
+    }
+}
+
+.statistics{
+    padding: 64px 0 120px;
+
+    .stat-card{
+        text-align: center;
+        h1{
+            margin-bottom: 20px;
+        }
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .gb-layout-column-wrap{
+        @media (min-width: 960px){
+            grid-template-columns: 1fr 1fr 1fr 2.4fr;
+        }
+        @media (min-width: 1340px){
+            grid-template-columns: 1fr 1fr 1fr 1.2fr;
+        }
+    }
+}

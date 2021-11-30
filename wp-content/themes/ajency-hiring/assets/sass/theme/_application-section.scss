@@ -1,0 +1,295 @@
+.contact-section{
+    background-color: $blue;
+    color: $white;
+    padding-top:120px;
+    padding-bottom: 120px;
+
+    .contact-section-content, .contact-section-header{
+        margin-bottom: 0;
+    }
+
+    .form-title{
+        width: 75%;
+        margin-bottom: 32px;
+    }
+    .form-description{
+        margin-bottom: 0;
+    }
+
+    .contact-section-content{
+        padding-top: 147px;
+    }
+    &__details{
+        position: relative;
+        .contact-profile{
+            img{
+                width: 300px;
+                border-radius: 10px;
+            }
+        }
+        .contact-card{
+            padding-left: 80px;
+            position: absolute;
+            bottom: -86px;
+            .wp-block-group__inner-container{
+                width: 330px;
+                background-color: $white;
+                color: $black;
+                box-shadow: $shadow;
+                border-radius: 10px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                h4, p{
+                    margin-bottom: 0;
+                }
+                h4{
+                    margin-top: 0;
+                }
+            }
+            &__mail{
+                margin-top: 24px;
+            }
+            &__mail, &__phone{
+                color: $blue;
+                a{
+                    &:before{
+                        bottom: -4px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &__form{
+        color:$white !important;
+
+        label, .frm_description{
+            color:$white !important;
+        }
+        input[type=text], input[type=email], textarea{
+            color: $white !important;
+        }
+    }
+
+    @media (max-width:768px){
+        margin-top: 80px;
+        padding-top: 80px;
+        padding-bottom: 79px;
+        .form-title{
+            width: 100%;
+            font-size: 2rem !important;
+        }
+        .contact-section-content{
+            padding-top: 86px;
+        }
+        &__details{
+            padding-top: 86px;
+
+            .contact-profile{
+                margin-bottom: 124px;
+                figure{
+                    margin-bottom: 0;
+                }
+            }
+            .contact-card{
+                right: 0;
+                padding-left: 0;
+                .wp-block-group__inner-container{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media (max-width:1024px) and (min-width:769px){
+        &__details{
+            .contact-card{
+                left: 20px;
+                padding-left: 0;
+                .wp-block-group__inner-container{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+form{
+    font-family: 'Work Sans', sans-serif !important;
+    input[type=text], input[type=email], input[type=number], input[type=tel], textarea{
+        font-family: 'Work Sans', sans-serif !important;
+        height: 58.12px !important;
+        color: $white !important;
+        border: 1px solid $white;
+        border-radius: 10px !important;
+        padding: 16px 15.96px !important;
+        font-size: 1.063rem !important;
+        line-height: 160% !important;
+        background-color: transparent !important;
+        transition: all $normal-duration ease-in-out;
+
+        &:focus{
+            box-shadow: none !important;
+            padding-bottom: 0 !important;
+            padding-top: 22px !important;
+            border-color: $white !important;
+
+            ~ label{
+                font-size: 0.625rem !important;
+                padding-top: 6px !important;
+            }
+        }
+        &:hover{
+            border-color: $white-hover !important;
+        }
+        &:invalid{
+            border-color: $error !important;
+        }
+    }
+    textarea{
+        resize: none;
+        height: 200px !important;
+        &:focus{
+            padding-top: 22px !important;
+        }
+    }
+    button{
+        font-family: 'Work Sans', sans-serif !important;
+        margin: 0 !important;
+        padding: 24px 32px !important;
+        background-color: $white !important;
+        color: $blue !important;
+        font-weight: 500 !important;
+        font-size: 1.125rem !important;
+        border-radius: 100px !important;
+        outline: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        transition: background-color $normal-duration ease-in-out;
+        &:hover{
+            background-color: $white-hover !important;
+        }
+        &:active{
+            background-color: $white-pressed !important;
+        }
+    }
+    .form-field{
+        position: relative !important;
+        margin-bottom: 32px !important;
+
+        label{
+            font-family: 'Work Sans', sans-serif !important;
+            font-size: 1.063rem !important;
+            line-height: 160% !important;
+            /* label positioning */
+            position: absolute;
+            padding: 16px 15.96px !important;
+            top: 0;
+            transition: all $normal-duration ease-in-out;
+        }
+
+        .frm_checkbox{
+            label{
+                position: relative !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+    fieldset{
+        padding-bottom: 0 !important;
+    }
+    .valid-field{
+        input, textarea{
+            padding-bottom: 0 !important;
+            padding-top: 22px !important;
+        }
+        label{
+            font-size: 0.625rem !important;
+            padding-top: 6px !important;
+        }
+    }
+    .frm_checkbox {
+        label{
+            cursor: pointer;
+            pointer-events: none;
+            outline: 0;
+            padding-left: 39px !important;
+            text-indent: 0 !important;
+            &:before{
+                content: '';
+                -webkit-appearance: none;
+                background-color: transparent;
+                border: 1px solid $white;
+                border-radius: 5px;
+                height: 24px;
+                width: 24px;
+                display: inline-block;
+                vertical-align: middle;
+                cursor: pointer;
+                margin-right: 16px;
+                position: absolute;
+                left: 0;
+                top: 5px;
+                pointer-events: auto;
+                transition: border-color $normal-duration ease-in-out;
+            }
+            &.checked:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 7.41px;
+                left: 9px;
+                width: 6px;
+                height: 14px;
+                border: solid #FFFFFF;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+                transition: border-color $normal-duration ease-in-out;
+            }
+            /* checkbox hover */
+            &:hover{
+                &:before, &:after{
+                    border-color: $white-hover !important;
+                }
+            }
+            /* checkbox pressed */
+            &:active{
+                &:before, &:after{
+                    border-color: $white-pressed !important;
+                }
+            }
+        }
+        input[type=checkbox]{
+            padding: 0 !important;
+            height: initial !important;
+            width: initial !important;
+            margin-bottom: 0 !important;
+            display: none !important;
+            cursor: pointer !important;
+            background-clip: padding-box !important;
+        }
+    }
+    .frm_blank_field{
+        input[type=text], input[type=email], textarea{
+            border: 1px solid $error !important;
+            &:hover{
+                border-color: $error-hover !important;
+            }
+            &:focus{
+                border-color: $error-active !important;
+            }
+        }
+        .frm_error, label{
+            color: $error !important;
+        }
+        .frm_checkbox{
+            label{
+                color: $white !important;
+                &:before{
+                    border-color: $error !important;
+                }
+            }
+        }
+    }
+}
