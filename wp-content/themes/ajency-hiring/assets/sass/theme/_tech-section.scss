@@ -1,4 +1,4 @@
-.reference-section{
+.tech-section{
     padding-top: 120px;
 
     h2{
@@ -6,17 +6,23 @@
     }
 
     &__logos{
-        padding: 56px 0;
+        padding: 63px 0;
         .wp-block-group__inner-container{
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: center;
+            justify-content: center;
         }
         .logo-list-1, .logo-list-2{
             width: 50%;
             .wp-block-group__inner-container{
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
+                grid-gap: 125px;
+
+                figure{
+                    margin: 0;
+                }
             }
         }
         .logo-list-1{
@@ -46,7 +52,7 @@
         }
 
         &__logos{
-            padding: 43px 0;
+            padding: 30px 0;
             .logo-list-1, .logo-list-2{
                 padding-left: 30px;
                 padding-right: 30px;
@@ -54,6 +60,7 @@
                 .wp-block-group__inner-container{
                     flex-wrap: nowrap;
                     justify-content: space-between;
+                    grid-gap:50px;
                     svg{
                         height: 100%;
                         width: auto;
@@ -63,7 +70,6 @@
             .logo-list-1{
                 padding-bottom: 24px;
                 .wp-block-group__inner-container{
-                    height: 24px;
                     svg{
                         &:nth-child(1){
                             margin-left: 0;

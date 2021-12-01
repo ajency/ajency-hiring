@@ -298,10 +298,10 @@ function my_child_theme_scripts() {
 add_action("wp_enqueue_scripts", "my_child_theme_scripts");
 
 /* Custom login page logo */
-/* function my_login_logo() { ?>
+function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-            background-image: url('');
+            background-image: url('https://backend-dev.ajency.in/wp-content/uploads/2021/11/ajency-logo.png');
             height:65px;
             width:320px;
             background-size: contain;
@@ -320,7 +320,7 @@ add_filter( 'login_headerurl', 'my_login_logo_url' );
 function my_login_logo_url_title() {
     return 'Ajency Hiring';
 }
-add_filter( 'login_headertitle', 'my_login_logo_url_title' ); */
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
 /* remove google fonts */

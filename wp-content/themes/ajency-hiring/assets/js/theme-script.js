@@ -1,25 +1,25 @@
 (function($){
 
-	  /* features slider */
+	  /* clients slider */
 	  jQuery(document).ready(function($){
 		var deviceAgent = navigator.userAgent.toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
 		if (agentID || window.outerWidth < 769) {
 	
-			$('.feature-cards').removeClass('container-md');
-			$('.feature-cards').removeClass('container-md__2');
-			$('.feature-cards .gb-container-content').addClass('feature-slider');
-			$('.feature-cards .card .gb-container-content').removeClass('feature-slider');
-			$('.img-container .gb-container-content').removeClass('feature-slider');
-			$('<div class="slider-nav"><div class="arrows"><div class="dots"></div></div></div>').insertAfter(".feature-cards");
-			$('.feature-slider').slick({
+			$('.client-cards').removeClass('container-md');
+			$('.client-cards').removeClass('container-md__2');
+			$('.client-cards .gb-container-content').addClass('client-slider');
+			$('.client-cards .card .gb-container-content').removeClass('client-slider');
+			$('.img-container .gb-container-content').removeClass('client-slider');
+			$('<div class="slider-nav"><div class="arrows"><div class="dots"></div></div></div>').insertAfter(".client-cards");
+			$('.client-slider').slick({
 				loop: true,
 				speed: 300,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				dots: true,
 				arrows:false,
-				appendDots: $('.features-section .slider-nav .dots'),
+				appendDots: $('.clients-section .slider-nav .dots'),
 				adaptiveHeight: true
 			  });
 	 
@@ -37,8 +37,8 @@
 		arrows:true,
 		appendArrows: $('.testimonial-images .slider-nav .arrows'),
     	appendDots: $('.testimonial-images .slider-nav .dots'),
-    	prevArrow: "<button class='arrows__prev'><svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 8L15 8' stroke='#236BC1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M8 0.999999L15 8L8 15' stroke='#236BC1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></button>",
-    	nextArrow: "<button class='arrows__next'><svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 8L15 8' stroke='#236BC1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M8 0.999999L15 8L8 15' stroke='#236BC1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></button>",
+    	prevArrow: "<button class='arrows__prev'><svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 8L15 8' stroke='#16171B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M8 0.999999L15 8L8 15' stroke='#16171B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></button>",
+    	nextArrow: "<button class='arrows__next'><svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 8L15 8' stroke='#16171B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M8 0.999999L15 8L8 15' stroke='#16171B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg></button>",
 		asNavFor: '.testimonial-slider'
 	  });
 	  	/* testimonial slider - images */
@@ -49,11 +49,19 @@
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			arrows: false,
-			asNavFor: '.testimonial-images .image-box .wp-block-group__inner-container'
+			asNavFor: '.testimonial-images .image-box .wp-block-group__inner-container',
+			responsive: [
+				{
+					breakpoint: 768,
+					settings:{
+						adaptiveHeight: true,
+					}
+				}
+			]
 		});
 
 	/* testimonial background element height */
-	$testimonial_height = $('.testimonial-section').height();
+	$testimonial_height = $('.testimonial-section').height()+61;
 	$('.testimonial-section .custom-element').css({"height":$testimonial_height});
 	$('.testimonial-section .testimonial-images .gb-container-content').css({"height":$testimonial_height});
 
@@ -87,5 +95,9 @@
 	$(".contact-card__phone a").addClass("custom-links");
 	$(".custom-logo-link").addClass("logo-links");
 	$(".footer-logos a").addClass("logo-links");
+
+	/* panorama */
+	$imgSrc1 = $(".section-full-grid .gb-container-image").attr("src");
+	$('.section-full-grid .gb-container-image-wrap').css('background-image', 'url(' + $imgSrc1 + ')');
 
 }(jQuery));

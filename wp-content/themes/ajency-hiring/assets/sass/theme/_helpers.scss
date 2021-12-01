@@ -4,17 +4,17 @@
 }
 a{
     text-decoration: none;
-    color: $blue;
+    color: $black;
 
     &:hover{
-        color: $blue;
+        color: $black;
     }
 }
 h2{
     font-family: 'Work Sans', sans-serif;
-    font-weight: bold;
-    font-size: 2.25em;
-    line-height: 120%;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 135%;
 }
 h4{
     @extend h2;
@@ -22,13 +22,14 @@ h4{
 }
 p{
     &.p2{
-        font-size: 0.75rem;
+        font-size: 0.813rem;
+        line-height: 148% !important;
     }
 }
 .quote{
     font-family: 'Work Sans', sans-serif;
-    font-size: 2.25rem;
-    line-height: 120% !important;
+    font-size: 1.875rem;
+    line-height: 133% !important;
 }
 .smaller-column{
     padding-left: 110px;
@@ -53,7 +54,7 @@ p{
 .white-btn{
     a{
         background-color: $white !important;
-        color: $blue !important;
+        color: $primary !important;
         padding: 16px 24px;
         font-size: 0.875rem;
         line-height: 100% !important;
@@ -98,7 +99,7 @@ p{
     }
 }
 /* panorama */
-.cam-preview{
+.img-preview{
     &--full{
         .wp-block-group__inner-container{
             .img-container{
@@ -108,7 +109,7 @@ p{
             .card{
                 &--small{
                     width: 168px !important;
-                    padding: 24px 16px 16px !important;
+                    padding: 24px 16px !important;
                     bottom: -65px !important;
                     left: 24px;
                         .card__logo{
@@ -155,14 +156,14 @@ p{
             &:hover{
                 svg {
                     path{
-                        stroke:$blue-hover;
+                        stroke:$primary-hover;
                     }
                 }
             }
             &:active{
                 svg {
                     path{
-                        stroke:$blue-pressed;
+                        stroke:$primary-pressed;
                     }
                 }
             }
@@ -191,13 +192,13 @@ p{
                         padding:4px;
                         &:before{
                             line-height: 23px;
-                            content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='3' stroke='%23236BC1' stroke-width='2'/%3E%3C/svg%3E");
+                            content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='3' stroke='%2316171B' stroke-width='2'/%3E%3C/svg%3E");
                             opacity: 1;
                         }
                         @media (min-width:769px){
                             &:hover{
                                 &:before{
-                                    content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23236BC1'/%3E%3C/svg%3E%0A");
+                                    content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23FCD800'/%3E%3C/svg%3E%0A");
                                 }
                             }
                         }
@@ -205,7 +206,7 @@ p{
                     &.slick-active{
                         button{
                             &:before{
-                                content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23236BC1'/%3E%3C/svg%3E%0A");
+                                content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23FCD800'/%3E%3C/svg%3E%0A");
                             }
                         }
                     }
@@ -251,11 +252,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         opacity: 70%;
     }
     &:focus{
-        color: $blue;
+        color: $black;
     }
     &:before{
         content: "";
-        background-color: $blue;
+        background-color: $black;
         height: 2px;
         width: 0;
         position: absolute;
@@ -300,7 +301,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     .quote{
         font-size: 1.5rem;
     }
-    .cam-preview{
+    .img-preview{
         &--full{
             .wp-block-group__inner-container{
                 .img-container{
@@ -319,7 +320,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 /* mobile */
 @media (max-width: 467px){
-    .cam-preview{
+    .img-preview{
         &--full{
             .wp-block-group__inner-container{
                 .img-container{
@@ -342,4 +343,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     .hideon-larger{
         display: none !important;
     }
+}
+
+.slick-initialized .slick-slide{
+    outline: none !important;
 }
