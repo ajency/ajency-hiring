@@ -24,10 +24,10 @@ body{
         font-family: 'Work Sans', sans-serif !important;
         font-size: 2.875rem !important;
         line-height: 64px !important;
-        font-weight: normal;
+        font-weight: 500;
 
         strong{
-            font-weight: normal;
+            font-weight: 500;
             background-color: #FCD800;
         }
 
@@ -58,12 +58,15 @@ body{
             font-size: 0.875rem;
             line-height: 100%;
             color:#000000 !important;
+            font-weight: 500 !important;
+            width: 228px;
             transition: background-color 250ms ease-in-out;
 
             &:active{
                 background-color: #ffe44d !important;
             }
-            @media (min-width:768px){
+            @media (min-width:769px){
+                width: 228px;
                 &:hover{
                     background-color: #ffe44d !important;
                 }
@@ -386,6 +389,7 @@ body{
                         transition: background-color 250ms ease-in-out;
                         a{
                         color: #000000 !important;
+                        font-weight: 500;
                         padding: 16px 24px !important;
                         }
                         &:active{
@@ -553,7 +557,7 @@ body{
                                 padding-top: 40px;
                             }
                             .primary-btn{
-                                text-align: left;
+                                text-align: center;
                             }
                         }
                     }

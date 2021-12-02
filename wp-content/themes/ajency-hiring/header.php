@@ -32,6 +32,8 @@ do_action( 'genesis_title' );
  */
 ?>
 <?php
+?><meta name="keywords" content="Backend developers, java, react, react-native, git, node-js"><?php
+
 do_action( 'genesis_meta' );
 
 wp_head(); // We need this for plugins.

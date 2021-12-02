@@ -100,4 +100,9 @@
 	$imgSrc1 = $(".section-full-grid .gb-container-image").attr("src");
 	$('.section-full-grid .gb-container-image-wrap').css('background-image', 'url(' + $imgSrc1 + ')');
 
+	$(".frm_compact_text button").click(function(){
+		setTimeout(function(){
+			$(".frm_compact .frm_error").css("display","none");
+		 }, 500);
+	});
 }(jQuery));

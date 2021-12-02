@@ -338,4 +338,23 @@ add_action( 'wp_enqueue_scripts', function () {
 }, 20 );
 
 /* disable default yoast schema */
-/* add_filter( 'wpseo_json_ld_output', '__return_false' ); */
+add_filter( 'wpseo_json_ld_output', '__return_false' );
+
+add_filter( 'wpseo_opengraph_url', 'my_opengraph_url' );
+
+/* change og url */
+function my_opengraph_url( $url ) {
+        return str_replace( 'https://backend-dev.ajency.in/', 'https://backend-dev.ajency.in/', $url );
+}
+
+add_filter( 'wpseo_opengraph_url', 'my_opengraph_url' );
+
+add_filter( 'wpseo_opengraph_type', 'yoast_change_opengraph_type', 10, 1 );
+
+function yoast_change_opengraph_type( $type ) {
+  if ( is_home() ) {
+    return 'article';
+  } else {
+    return $type;
+  }
+}
