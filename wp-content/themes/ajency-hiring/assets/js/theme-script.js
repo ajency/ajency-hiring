@@ -52,7 +52,7 @@
 			asNavFor: '.testimonial-images .image-box .wp-block-group__inner-container',
 			responsive: [
 				{
-					breakpoint: 768,
+					breakpoint: 769,
 					settings:{
 						adaptiveHeight: true,
 					}
@@ -65,7 +65,7 @@
 	$('.testimonial-section .custom-element').css({"height":$testimonial_height});
 	$('.testimonial-section .testimonial-images .gb-container-content').css({"height":$testimonial_height});
 
-	$(document).on('blur change', 'input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="number"]', function () {
+	$(document).on('blur change', 'input[type="text"], input[type="email"], input[type="url"], input[type="tel"], textarea, input[type="number"]', function () {
 		if (!$(this).val()) {
 			$(this).parent().removeClass("valid-field");
 		} else {

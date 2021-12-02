@@ -1,6 +1,6 @@
 .contact-section{
-    background-color: $primary;
-    color: $white;
+    background-color: $light-bg;
+    color: $black;
     padding-top:120px;
     padding-bottom: 120px;
 
@@ -13,14 +13,26 @@
         margin-bottom: 32px;
     }
     .form-description{
-        margin-bottom: 0;
-    }
+        margin-bottom: 40px;
+        font-size: 1rem;
+        line-height: 170%;
 
-    .contact-section-content{
-        padding-top: 147px;
+        strong{
+            background-color: $primary;
+        }
     }
     &__details{
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        iframe{
+            width: 306px;
+            height: 424px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 16px 20px rgba(0, 0, 0, 0.14);
+        }
         .contact-profile{
             img{
                 width: 300px;
@@ -31,6 +43,7 @@
             padding-left: 80px;
             position: absolute;
             bottom: -86px;
+            width: 100%;
             .wp-block-group__inner-container{
                 width: 330px;
                 background-color: $white;
@@ -40,6 +53,7 @@
                 padding: 30px;
                 display: flex;
                 flex-direction: column;
+                margin-left: auto;
                 h4, p{
                     margin-bottom: 0;
                 }
@@ -47,8 +61,12 @@
                     margin-top: 0;
                 }
             }
+            &__name{
+                font-size: 16px;
+                line-height: 135%;
+            }
             &__mail{
-                margin-top: 24px;
+                margin-top: 29px;
             }
             &__mail, &__phone{
                 color: $black;
@@ -62,29 +80,31 @@
     }
 
     &__form{
-        color:$white !important;
+        color:$black !important;
 
         label, .frm_description{
-            color:$white !important;
+            color:$black !important;
         }
-        input[type=text], input[type=email], textarea{
-            color: $white !important;
+        input[type=text], input[type=email],input[type=url], textarea{
+            color: $black !important;
         }
     }
 
     @media (max-width:768px){
-        margin-top: 80px;
-        padding-top: 80px;
-        padding-bottom: 79px;
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-bottom: 30px;
+        border-top: 1px solid $white;
         .form-title{
             width: 100%;
             font-size: 2rem !important;
         }
         .contact-section-content{
-            padding-top: 86px;
+            padding-top: 40px;
         }
         &__details{
-            padding-top: 86px;
+            padding-top: 40px;
+            display: block;
 
             .contact-profile{
                 margin-bottom: 124px;
@@ -95,199 +115,280 @@
             .contact-card{
                 right: 0;
                 padding-left: 0;
-                .wp-block-group__inner-container{
-                    width: 100%;
-                }
             }
         }
     }
     @media (max-width:1024px) and (min-width:769px){
+        .smaller-column{
+            padding: 0;
+        }
         &__details{
             .contact-card{
                 left: 20px;
                 padding-left: 0;
                 .wp-block-group__inner-container{
-                    width: 100%;
+                    width: 80%;
                 }
             }
         }
     }
-}
-
-form{
-    font-family: 'Work Sans', sans-serif !important;
-    input[type=text], input[type=email], input[type=number], input[type=tel], textarea{
+    form{
         font-family: 'Work Sans', sans-serif !important;
-        height: 58.12px !important;
-        color: $white !important;
-        border: 1px solid $white;
-        border-radius: 10px !important;
-        padding: 16px 15.96px !important;
-        font-size: 1.063rem !important;
-        line-height: 160% !important;
-        background-color: transparent !important;
-        transition: all $normal-duration ease-in-out;
-
-        &:focus{
+        input[type=text], input[type=email], input[type=number], input[type=tel],input[type=url], textarea{
+            font-family: 'Work Sans', sans-serif !important;
+            height: 58px !important;
+            color: $black !important;
+            border: 1px solid $border !important;
+            border-radius: 10px !important;
+            padding: 16px 15.96px !important;
+            font-size: 1.063rem !important;
+            line-height: 160% !important;
+            background-color: $white !important;
+            transition: all $normal-duration ease-in-out;
+    
+            &:focus{
+                box-shadow: none !important;
+                padding-bottom: 0 !important;
+                padding-top: 22px !important;
+                border-color: $black !important;
+    
+                ~ label{
+                    font-size: 0.625rem !important;
+                    padding-top: 6px !important;
+                }
+            }
+            &:hover{
+                border-color: $black !important;
+            }
+            &:invalid{
+                border-color: $error !important;
+            }
+        }
+        textarea{
+            resize: none;
+            height: 200px !important;
+            &:focus{
+                padding-top: 22px !important;
+            }
+        }
+        button{
+            font-family: 'Work Sans', sans-serif !important;
+            margin: 0 !important;
+            padding: 24px 32px !important;
+            background-color: $primary !important;
+            color: $black !important;
+            font-weight: 500 !important;
+            font-size: 1rem !important;
+            line-height: 112% !important;
+            border-radius: 6px !important;
+            outline: none !important;
+            border: none !important;
             box-shadow: none !important;
+            transition: background-color $normal-duration ease-in-out;
+            &:hover{
+                background-color: $primary-hover !important;
+            }
+            &:active{
+                background-color: $primary-pressed !important;
+            }
+        }
+        .form-field{
+            position: relative !important;
+            margin-bottom: 32px !important;
+    
+            label{
+                font-family: 'Work Sans', sans-serif !important;
+                font-size: 1.063rem !important;
+                line-height: 160% !important;
+                /* label positioning */
+                position: absolute;
+                padding: 16px 15.96px !important;
+                top: 0;
+                transition: all $normal-duration ease-in-out;
+            }
+    
+            .frm_checkbox{
+                label{
+                    position: relative !important;
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                }
+            }
+        }
+        fieldset{
             padding-bottom: 0 !important;
-            padding-top: 22px !important;
-            border-color: $white !important;
-
-            ~ label{
+        }
+        .valid-field{
+            input, textarea{
+                padding-bottom: 0 !important;
+                padding-top: 22px !important;
+            }
+            label{
                 font-size: 0.625rem !important;
                 padding-top: 6px !important;
             }
         }
-        &:hover{
-            border-color: $white-hover !important;
-        }
-        &:invalid{
-            border-color: $error !important;
-        }
-    }
-    textarea{
-        resize: none;
-        height: 200px !important;
-        &:focus{
-            padding-top: 22px !important;
-        }
-    }
-    button{
-        font-family: 'Work Sans', sans-serif !important;
-        margin: 0 !important;
-        padding: 24px 32px !important;
-        background-color: $white !important;
-        color: $primary !important;
-        font-weight: 500 !important;
-        font-size: 1.125rem !important;
-        border-radius: 100px !important;
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        transition: background-color $normal-duration ease-in-out;
-        &:hover{
-            background-color: $white-hover !important;
-        }
-        &:active{
-            background-color: $white-pressed !important;
-        }
-    }
-    .form-field{
-        position: relative !important;
-        margin-bottom: 32px !important;
-
-        label{
-            font-family: 'Work Sans', sans-serif !important;
-            font-size: 1.063rem !important;
-            line-height: 160% !important;
-            /* label positioning */
-            position: absolute;
-            padding: 16px 15.96px !important;
-            top: 0;
-            transition: all $normal-duration ease-in-out;
-        }
-
-        .frm_checkbox{
+        .frm_checkbox {
             label{
-                position: relative !important;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
-            }
-        }
-    }
-    fieldset{
-        padding-bottom: 0 !important;
-    }
-    .valid-field{
-        input, textarea{
-            padding-bottom: 0 !important;
-            padding-top: 22px !important;
-        }
-        label{
-            font-size: 0.625rem !important;
-            padding-top: 6px !important;
-        }
-    }
-    .frm_checkbox {
-        label{
-            cursor: pointer;
-            pointer-events: none;
-            outline: 0;
-            padding-left: 39px !important;
-            text-indent: 0 !important;
-            &:before{
-                content: '';
-                -webkit-appearance: none;
-                background-color: transparent;
-                border: 1px solid $white;
-                border-radius: 5px;
-                height: 24px;
-                width: 24px;
-                display: inline-block;
-                vertical-align: middle;
                 cursor: pointer;
-                margin-right: 16px;
-                position: absolute;
-                left: 0;
-                top: 5px;
-                pointer-events: auto;
-                transition: border-color $normal-duration ease-in-out;
-            }
-            &.checked:after{
-                content: '';
-                display: block;
-                position: absolute;
-                top: 7.41px;
-                left: 9px;
-                width: 6px;
-                height: 14px;
-                border: solid #FFFFFF;
-                border-width: 0 2px 2px 0;
-                transform: rotate(45deg);
-                transition: border-color $normal-duration ease-in-out;
-            }
-            /* checkbox hover */
-            &:hover{
-                &:before, &:after{
-                    border-color: $white-hover !important;
-                }
-            }
-            /* checkbox pressed */
-            &:active{
-                &:before, &:after{
-                    border-color: $white-pressed !important;
-                }
-            }
-        }
-        input[type=checkbox]{
-            padding: 0 !important;
-            height: initial !important;
-            width: initial !important;
-            margin-bottom: 0 !important;
-            display: none !important;
-            cursor: pointer !important;
-            background-clip: padding-box !important;
-        }
-    }
-    .frm_blank_field{
-        input[type=text], input[type=email], textarea{
-            border: 1px solid $error !important;
-            &:hover{
-                border-color: $error-hover !important;
-            }
-            &:focus{
-                border-color: $error-active !important;
-            }
-        }
-        .frm_error, label{
-            color: $error !important;
-        }
-        .frm_checkbox{
-            label{
-                color: $white !important;
+                pointer-events: none;
+                outline: 0;
+                padding-left: 39px !important;
+                text-indent: 0 !important;
                 &:before{
-                    border-color: $error !important;
+                    content: '';
+                    -webkit-appearance: none;
+                    background-color: transparent;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    height: 24px;
+                    width: 24px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    margin-right: 16px;
+                    position: absolute;
+                    left: 0;
+                    top: 5px;
+                    pointer-events: auto;
+                    transition: border-color $normal-duration ease-in-out;
+                }
+                &.checked:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 7.41px;
+                    left: 9px;
+                    width: 6px;
+                    height: 14px;
+                    border: solid #FFFFFF;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                    transition: border-color $normal-duration ease-in-out;
+                }
+                /* checkbox hover */
+                &:hover{
+                    &:before, &:after{
+                        border-color: $black !important;
+                    }
+                }
+                /* checkbox pressed */
+                &:active{
+                    &:before, &:after{
+                        border-color: $black !important;
+                    }
+                }
+            }
+            input[type=checkbox]{
+                padding: 0 !important;
+                height: initial !important;
+                width: initial !important;
+                margin-bottom: 0 !important;
+                display: none !important;
+                cursor: pointer !important;
+                background-clip: padding-box !important;
+            }
+        }
+        .frm_blank_field{
+            input[type=text], input[type=email],input[type=url], textarea{
+                border: 1px solid $error !important;
+                &:hover{
+                    border-color: $error-hover !important;
+                }
+                &:focus{
+                    border-color: $error-active !important;
+                }
+            }
+            .frm_error, label{
+                color: $error !important;
+            }
+            .frm_checkbox{
+                label{
+                    color: $black !important;
+                    &:before{
+                        border-color: $error !important;
+                    }
+                }
+            }
+        }
+        .frm_compact{
+            display: flex;
+            align-items: center;
+
+            .frm_description{
+                font-size: 16px;
+                line-height: 150%;
+                align-self: flex-start;
+            }
+            .frm_dropzone{
+                .dz-remove{
+                    color: $white !important;
+                    &:before{
+                        background: #868686;
+                        border-radius: 100%;
+                        content: "\e928";
+                        padding: 2px;
+                    }
+                }
+                .frm_upload_icon{
+                    display: none;
+                }
+                &.frm_single_upload{
+                    margin: 0;
+                    &.dz-started{
+                        background-color: transparent;
+                        margin:0;
+                        .dz-message{
+                            display: block !important;
+                            margin-top: 0;
+                            border: none;
+                            background: transparent;
+                            padding: 0;
+                            margin-bottom: 21px;
+                        }
+                    }
+                }
+                &.dz-clickable{
+                    .dz-message{
+                        padding: 0 !important;
+                        background: transparent !important;
+                        border: none !important;
+                    }
+                }
+                button{
+                    background-color: $white !important;
+                    border: 1px solid #707070 !important;
+                    padding: 16px !important;
+                    margin-right: 18px !important;
+
+                    &:hover{
+                        background-color: $gray !important;
+                    }
+                }
+                .dz-preview{
+                    .dz-column{
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        .dz-progress{
+                            display: none;
+                        }
+                        .dz-details{
+                            display: flex;
+                            align-items: center;
+                            .dz-filename{
+                                max-width: 100%;
+                                margin-right: 12px;
+                                color: #8D7F60;
+                                font-size: 16px;
+                                line-height: 27px;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -89,7 +89,7 @@
             bottom: -50px;
         }
         padding: 0;
-        margin-bottom: 120px;
+        margin-bottom: 0px;
         .custom-element{
             width: 100%;
             bottom: 0;
@@ -113,6 +113,12 @@
         .right-side{
             padding: 0;
             margin: 70px 0 0;
+
+            .testimonial-content{
+                .experience{
+                    margin-bottom: 50px;
+                }
+            }
 
             .testimonial-slider{
                 .slick-track{
