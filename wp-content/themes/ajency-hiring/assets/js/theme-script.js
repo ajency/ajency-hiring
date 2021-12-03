@@ -97,7 +97,7 @@
 	$(".footer-logos a").addClass("logo-links");
 
 	/* panorama */
-	$imgSrc1 = $(".section-full-grid .gb-container-image").attr("src");
+	$imgSrc1 = $(".section-full-grid .gb-container-image").attr("data-src");
 	$('.section-full-grid .gb-container-image-wrap').css('background-image', 'url(' + $imgSrc1 + ')');
 
 	$(".frm_compact_text button").click(function(){
